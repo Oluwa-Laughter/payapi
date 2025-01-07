@@ -12,7 +12,7 @@ function NavBar() {
   }
 
   return (
-    <header className="">
+    <header className="z-50">
       <nav className="container mx-auto flex items-center justify-between p-4 md:p-0 ">
         <NavLink to="/">
           <img
