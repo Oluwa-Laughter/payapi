@@ -28,10 +28,10 @@ const images = [
 function About() {
   return (
     <section className="relative overflow-hidden bg-mirageBlue text-white p-12 md:p-24">
-      <div className="bg-circle -left-[6px] -top-[548px]  md:-left-[235px] md:-top-[359px]"></div>
+      <div className="bg-circle -left-[6px] -top-[548px] md:-left-[235px] md:-top-[359px]"></div>
       <div className="container mx-auto flex flex-col-reverse items-center gap-12  lg:justify-between lg:space-x-12 lg:flex-row ">
-        <div className="flex flex-col items-center justify-center  lg:items-start max-w-xl space-y-8">
-          <h2 className=" text-3xl md:text-5xl font-serif text-center lg:text-start ">
+        <div className="flex flex-col items-center justify-center z-50 lg:items-start max-w-xl space-y-8">
+          <h2 className="text-3xl md:text-5xl font-serif text-center text-linkWaterWhite lg:text-start ">
             Who we work with
           </h2>
           <p className="font-sans text-sm text-center md:text-start text-gray-400">

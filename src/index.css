@@ -10,3 +10,8 @@
   height: 948px;
   opacity: 0.8;
 }
+
+.ficon:hover {
+  filter: invert(57%) sepia(44%) saturate(1023%) hue-rotate(308deg)
+    brightness(92%) contrast(89%);
+}

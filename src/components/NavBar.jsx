@@ -25,9 +25,9 @@ function NavBar() {
         <div
           className={` ${
             navOpen
-              ? "flex flex-col space-y-8 absolute top-3 right-2 w-[60vw] h-[50vh] rounded-lg bg-mirageBlue "
+              ? "flex flex-col space-y-8 absolute top-3 right-2 w-[60vw] z-50 h-[50vh] rounded-lg bg-mirageBlue "
               : "hidden md:flex md:flex-row md:ml-12 md:justify-between"
-          }  items-center  md:w-full py-6`}
+          }  items-center md:w-full py-6`}
           onClick={hadleNavClick}
         >
           <div className="flex flex-col space-y-6 pt-6 md:flex-row md:space-y-0 md:space-x-10 md:pt-0 items-center ">
@@ -51,17 +51,17 @@ function NavBar() {
             </NavLink>
           </div>
 
-          <button className="w-[173px] bg-darkPink hover:opacity-80 font-semibold text-sm text-linkWaterWhite p-3 rounded-full">
+          <button className="w-[173px] bg-darkPink hover:bg-currentcharmPink font-semibold text-sm text-linkWaterWhite p-3 rounded-full">
             Schedule a demo
           </button>
         </div>
 
         {navOpen ? (
-          <button className="md:hidden block z-40" onClick={handleMenu}>
+          <button className="md:hidden block z-50" onClick={handleMenu}>
             <img src="assets/shared/mobile/close.svg" alt="" />
           </button>
         ) : (
-          <button className="md:hidden block z-40" onClick={handleMenu}>
+          <button className="md:hidden block" onClick={handleMenu}>
             <img src="assets/shared/mobile/menu.svg" alt="" />
           </button>
         )}
