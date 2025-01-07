@@ -12,7 +12,7 @@ function NavBar() {
   }
 
   return (
-    <header className="bg-[#EDF3F8] sticky top-0 z-50 ">
+    <header className="">
       <nav className="container mx-auto flex items-center justify-between p-4 md:p-0 ">
         <NavLink to="/">
           <img
@@ -58,11 +58,11 @@ function NavBar() {
 
         {navOpen ? (
           <button className="md:hidden block z-40" onClick={handleMenu}>
-            <img src="public/assets/shared/mobile/close.svg" alt="" />
+            <img src="assets/shared/mobile/close.svg" alt="" />
           </button>
         ) : (
           <button className="md:hidden block z-40" onClick={handleMenu}>
-            <img src="public/assets/shared/mobile/menu.svg" alt="" />
+            <img src="assets/shared/mobile/menu.svg" alt="" />
           </button>
         )}
       </nav>

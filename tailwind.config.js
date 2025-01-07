@@ -7,7 +7,6 @@ export default {
     lg: "976px",
     xl: "1440px",
   },
-
   theme: {
     extend: {
       colors: {

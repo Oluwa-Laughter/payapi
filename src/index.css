@@ -2,35 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-.bg-circle-home {
-  position: relative;
-}
-
-.bg-circle-home::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 1;
+.bg-circle {
   background-image: url("../assets/shared/desktop/bg-pattern-circle.svg");
   background-repeat: no-repeat;
-  background-position: center -64vh;
-}
-
-.top-right-bg-circle {
-  position: relative;
-}
-
-.top-right-bg-circle::before {
-  content: "";
   position: absolute;
-  top: -44rem;
-  right: 0;
-  width: 13rem;
-  height: 48.75rem;
-  z-index: 1;
-  background-image: url("../assets/shared/desktop/bg-pattern-circle.svg");
-  background-repeat: no-repeat;
+  width: 948px;
+  height: 948px;
+  opacity: 0.8;
 }
