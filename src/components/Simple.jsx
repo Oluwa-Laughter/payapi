@@ -1,6 +1,6 @@
 function Simple() {
   return (
-    <section className="relative">
+    <section className="relative overflow-hidden">
       <div className="hidden lg:block bg-circle -right-1/4 -top-[53px] -z-50 "></div>
       <div className="container mx-auto flex flex-col md:flex-row-reverse items-center justify-between space-y-10 md:space-y-0">
         <div className="flex justify-center items-center ">
