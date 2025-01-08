@@ -29,7 +29,7 @@ function Finances() {
             className="flex flex-col items-center space-y-6 p-4"
           >
             <img src={fin.image} className="w-28 h-28" alt="" />
-            <h3 className="font-serif text-2xl lg:text-3xl text-mirageBlue ">
+            <h3 className="font-serif text-2xl lg:text-3xl font-bold text-sanJuanBlue ">
               {fin.title}
             </h3>
             <p className="text-center text-sm font-sans text-gray-500">

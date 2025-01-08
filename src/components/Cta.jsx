@@ -2,7 +2,7 @@ function Cta() {
   return (
     <section className="p-1 pb-12">
       <div className="container mx-auto flex flex-col lg:flex-row items-center lg:justify-between space-y-4 lg:space-y-0">
-        <h2 className="font-serif text-4xl md:text-5xl text-mirageBlue">
+        <h2 className="font-serif text-4xl md:text-5xl font-bold text-sanJuanBlue">
           Ready to start?
         </h2>
         <div className="flex flex-col space-y-4 items-center md:space-y-0 md:flex-row md:shadow-md md:rounded-full md:bg-white w-[70%] md:w-auto ">

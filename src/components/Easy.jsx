@@ -8,7 +8,7 @@ function Easy() {
           alt=""
         />
         <div className="max-w-lg flex flex-col items-center px-8 md:items-start space-y-8">
-          <h2 className="text-3xl text-mirageBlue md:text-5xl font-serif text-center md:text-start ">
+          <h2 className="text-3xl font-bold text-sanJuanBlue md:text-5xl font-serif text-center md:text-start ">
             Easy To Implement
           </h2>
 

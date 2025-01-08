@@ -8,7 +8,7 @@ function Simple() {
         </div>
 
         <div className="flex max-w-md flex-col space-y-8 items-center md:items-start ">
-          <h2 className="text-3xl md:text-5xl font-serif text-center lg:text-start ">
+          <h2 className="text-3xl md:text-5xl font-serif text-center lg:text-start font-bold text-sanJuanBlue  ">
             Simple UI & UX
           </h2>
           <p className="font-sans text-sm text-center md:text-start text-gray-400">

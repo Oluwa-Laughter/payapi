@@ -16,3 +16,7 @@
   filter: invert(57%) sepia(44%) saturate(1023%) hue-rotate(308deg)
     brightness(92%) contrast(89%);
 }
+
+.aboutImage {
+  background-image: url("assets/about/desktop/image-team-members.jpg");
+}
