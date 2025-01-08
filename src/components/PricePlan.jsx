@@ -46,30 +46,24 @@ function Features() {
 
 function PricePlan() {
   return (
-    <section className="container mx-auto lg:py-24 px-8 lg:px-0 py-12 ">
-      <div className="grid grid-rows-1 md:grid-cols-3 gap-8">
+    <section className="container mx-auto px-8 lg:px-0 py-12">
+      <div className="grid grid-rows-1 md:grid-cols-3 justify-between ">
         {pricePlanData.map((plan, index) => (
           <div
-            className="flex flex-col space-y-8 items-center lg:items-start"
+            className="max-w-xs flex flex-col space-y-8 items-center lg:items-start"
             key={index}
           >
             <h3 className="font-serif text-3xl text-darkPink capitalize text-center lg:text-left lg:text-4xl">
               {plan.title} plan
             </h3>
-            <p className="text-lightSanJuanBlue font-sans py-4 text-sm text-center lg:text-left">
+            <p className="text-lightSanJuanBlue font-sans text-sm text-center lg:text-left">
               {plan.description}
             </p>
 
             <h2 className="font-serif text-5xl text-center font-bold text-sanJuanBlue">
               {plan.price}
             </h2>
-
-            <div className="w-full h-0.5 bg-gray-400"></div>
-
             <Features />
-
-            <div className="w-full h-0.5 bg-gray-400"></div>
-
             <button className="w-[168px] p-3 rounded-full border-2 font-semibold  border-sanJuanBlue text-sanJuanBlue bg-linkWaterWhite hover:text-linkWaterWhite hover:bg-sanJuanBlue transition-colors duration-300">
               Request Access
             </button>
