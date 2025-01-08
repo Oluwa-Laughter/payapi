@@ -3,7 +3,7 @@ import { Link } from "react-router";
 function Hero() {
   return (
     <section id="hero" className="pb-24 overflow-hidden">
-      <div className="bg-circle -z-50 -left-[202px] -top-[550px] md:left-2/3 md:-top-[172px]" />
+      <div className="bg-circle -z-50 -left-[202px] -top-[550px] md:left-2/3 md:-top-[172px] overflow-x-hidden " />
       <div className="container mx-auto flex flex-col-reverse justify-center lg:justify-between items-center space-y-8 bg-lightSansJuanBlue lg:flex-row md:space-y-0 md:space-x-12 ">
         <div className="max-w-xl mx-8 flex flex-col justify-center items-center lg:items-start space-y-4 md:mx-0  ">
           <h1 className="font-serif  text-4xl text-center text-sanJuanBlue lg:text-left md:text-5xl lg:text-7xl ">
