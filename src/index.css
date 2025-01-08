@@ -9,6 +9,7 @@
   width: 948px;
   height: 948px;
   opacity: 0.8;
+  overflow: hidden;
 }
 
 .ficon:hover {
