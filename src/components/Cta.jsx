@@ -1,6 +1,6 @@
 function Cta() {
   return (
-    <section className="p-1 pb-12">
+    <section className="p-1 py-12">
       <div className="container mx-auto flex flex-col lg:flex-row items-center lg:justify-between space-y-4 lg:space-y-0">
         <h2 className="font-serif text-4xl md:text-5xl font-bold text-sanJuanBlue">
           Ready to start?

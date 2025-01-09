@@ -21,7 +21,7 @@ const financesObj = [
 
 function Finances() {
   return (
-    <section className="py-24">
+    <section className="pt-24 pb-10 ">
       <div className="container mx-auto grid grid-rows-1 md:grid-cols-3 items-center gap-20">
         {financesObj.map((fin) => (
           <div

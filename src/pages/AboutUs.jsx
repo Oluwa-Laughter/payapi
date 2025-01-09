@@ -102,7 +102,7 @@ function TeamOffice() {
 
 function CulturePeople() {
   return (
-    <section className="py-16">
+    <section className="pt-16">
       <div className="container lg:max-w-6xl mx-auto my-8">
         <div className="flex flex-col md:flex-row space-y-8 md:space-y-0 items-center md:justify-between md:items-start px-8 md:px-0 ">
           <h3 className="font-serif text-3xl md:text-4xl text-sanJuanBlue min-w-64 text-center md:text-start font-semibold ">

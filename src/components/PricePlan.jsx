@@ -46,11 +46,11 @@ function Features() {
 
 function PricePlan() {
   return (
-    <section className="container mx-auto px-8 lg:px-0 py-12">
+    <section className="container mx-auto px-8 lg:px-0 pt-12">
       <div className="grid grid-rows-1 md:grid-cols-3 justify-between ">
         {pricePlanData.map((plan, index) => (
           <div
-            className="max-w-xs flex flex-col space-y-8 items-center lg:items-start"
+            className=" md:max-w-xs flex flex-col space-y-8 items-center lg:items-start pb-12 "
             key={index}
           >
             <h3 className="font-serif text-3xl text-darkPink capitalize text-center lg:text-left lg:text-4xl">
