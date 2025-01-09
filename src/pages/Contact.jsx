@@ -84,6 +84,14 @@ function CompanyInfo() {
 }
 
 function ContactForm() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    company: "",
+    title: "",
+    message: "",
+  });
+
   const [error, setError] = useState(false);
   const [errorMessages, setErrorMessages] = useState({
     name: "",
@@ -95,73 +103,142 @@ function ContactForm() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    const [name, email, company, title, message] = e.target.elements;
+    let hasError = false;
+    const newErrorMessages = { ...errorMessages };
 
-    if (
-      validateText(name.value) &&
-      validateEmail(email.value) &&
-      validateText(company.value) &&
-      validateText(title.value) &&
-      validateText(message.value)
-    ) {
-      setError(true);
-      setErrorMessages({});
+    // Validate name
+    if (!validateText(formData.name)) {
+      newErrorMessages.name = "Name is required";
+      hasError = true;
+    } else {
+      newErrorMessages.name = "";
+    }
+
+    // Validate email
+    if (!validateEmail(formData.email)) {
+      newErrorMessages.email = "Valid email is required";
+      hasError = true;
+    } else {
+      newErrorMessages.email = "";
+    }
+
+    // Validate company
+    if (!validateText(formData.company)) {
+      newErrorMessages.company = "Company name is required";
+      hasError = true;
+    } else {
+      newErrorMessages.company = "";
+    }
+
+    // Validate title
+    if (!validateText(formData.title)) {
+      newErrorMessages.title = "Title is required";
+      hasError = true;
+    } else {
+      newErrorMessages.title = "";
+    }
+
+    // Validate message
+    if (!validateText(formData.message)) {
+      newErrorMessages.message = "Message is required";
+      hasError = true;
+    } else {
+      newErrorMessages.message = "";
+    }
+
+    setErrorMessages(newErrorMessages);
+    setError(hasError);
+
+    if (!hasError) {
+      setFormData({
+        name: "",
+        email: "",
+        company: "",
+        title: "",
+        message: "",
+      });
     }
   }
 
+  const handleChange = (name, value) => {
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+    if (errorMessages[name]) {
+      setErrorMessages((prev) => ({
+        ...prev,
+        [name]: "",
+      }));
+    }
+  };
+
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col max-w-xl p-4 ">
+    <form onSubmit={handleSubmit} className="flex flex-col max-w-xl p-4">
       <div className="flex flex-col w-full p-2 bg-transparent">
         <input
           type="text"
           placeholder="Name"
-          className={` ${
-            error && "border-red-500 placeholder:text-red-500"
-          }  p-4 border border-x-0 text-sanJuanBlue text-lg placeholder:text-lightSanJuanBlue placeholder:hover:text-sanJuanBlue focus:outline-none border-t-0 border-b-1 border-lightSanJuanBlue bg-transparent`}
+          value={formData.name}
+          onChange={(e) => handleChange("name", e.target.value)}
+          className={`${
+            errorMessages.name ? "border-red-500 placeholder:text-red-500" : ""
+          } p-4 border border-x-0 text-sanJuanBlue text-lg placeholder:text-lightSanJuanBlue placeholder:hover:text-sanJuanBlue focus:outline-none border-t-0 border-b-1 border-lightSanJuanBlue bg-transparent`}
         />
-        {error && (
+        {error && errorMessages.name && (
           <p className="text-red-500 text-sm text-san pl-4 pt-1">
             {errorMessages.name}
           </p>
         )}
       </div>
+
       <div className="flex flex-col w-full p-2 bg-transparent">
         <input
-          type="text"
+          type="email"
           placeholder="Email Address"
-          className={` ${
-            error && "border-red-500 placeholder:text-red-500"
-          } p-4 border border-x-0 text-sanJuanBluetext-lg text-lg placeholder:text-lightSanJuanBlue  placeholder:hover:text-sanJuanBlue focus:outline-none border-t-0 border-b-1 border-lightSanJuanBlue bg-transparent`}
+          value={formData.email}
+          onChange={(e) => handleChange("email", e.target.value)}
+          className={`${
+            errorMessages.email ? "border-red-500 placeholder:text-red-500" : ""
+          } p-4 border border-x-0 text-sanJuanBlue text-lg placeholder:text-lightSanJuanBlue placeholder:hover:text-sanJuanBlue focus:outline-none border-t-0 border-b-1 border-lightSanJuanBlue bg-transparent`}
         />
-        {error && (
+        {error && errorMessages.email && (
           <p className="text-red-500 text-sm text-san pl-4 pt-1">
             {errorMessages.email}
           </p>
         )}
       </div>
+
       <div className="flex flex-col w-full p-2 bg-transparent">
         <input
           type="text"
           placeholder="Company Name"
-          className={` ${
-            error && "border-red-500 placeholder:text-red-500"
+          value={formData.company}
+          onChange={(e) => handleChange("company", e.target.value)}
+          className={`${
+            errorMessages.company
+              ? "border-red-500 placeholder:text-red-500"
+              : ""
           } p-4 border border-x-0 text-sanJuanBlue text-lg placeholder:text-lightSanJuanBlue placeholder:hover:text-sanJuanBlue focus:outline-none border-t-0 border-b-1 border-lightSanJuanBlue bg-transparent`}
         />
-        {error && (
+        {error && errorMessages.company && (
           <p className="text-red-500 text-sm text-san pl-4 pt-1">
             {errorMessages.company}
           </p>
         )}
       </div>
+
       <div className="flex flex-col w-full p-2 bg-transparent">
         <input
           type="text"
           placeholder="Title"
-          className={` ${
-            error && "border-red-500 placeholder:text-red-500"
-          }  p-4 border border-x-0 text-sanJuanBlue text-lg placeholder:text-lightSanJuanBlue  placeholder:hover:text-sanJuanBlue focus:text-mirageBlue focus:outline-none border-t-0 border-b-1 border-lightSanJuanBlue bg-transparent`}
+          value={formData.title}
+          onChange={(e) => handleChange("title", e.target.value)}
+          className={`${
+            errorMessages.title ? "border-red-500 placeholder:text-red-500" : ""
+          } p-4 border border-x-0 text-sanJuanBlue text-lg placeholder:text-lightSanJuanBlue placeholder:hover:text-sanJuanBlue focus:outline-none border-t-0 border-b-1 border-lightSanJuanBlue bg-transparent`}
         />
-        {error && (
+        {error && errorMessages.title && (
           <p className="text-red-500 text-sm text-san pl-4 pt-1">
             {errorMessages.title}
           </p>
@@ -173,16 +250,18 @@ function ContactForm() {
           name="message"
           id="message"
           placeholder="Message"
-          className={` ${
-            error && "placeholder:text-red-500"
-          } h-[89px] p-5 w-full bg-transparent resize-none focus:outline-none text-lg  placeholder:hover:text-sanJuanBlue placeholder:text-lightSanJuanBlue `}
-        ></textarea>
+          value={formData.message}
+          onChange={(e) => handleChange("message", e.target.value)}
+          className={`${
+            errorMessages.message ? "placeholder:text-red-500" : ""
+          } h-[89px] p-5 w-full bg-transparent resize-none focus:outline-none text-lg placeholder:hover:text-sanJuanBlue placeholder:text-lightSanJuanBlue`}
+        />
         <div
           className={`${
             errorMessages.message ? "border-red-500" : ""
           } border-b border-lightSanJuanBlue px-2`}
-        ></div>
-        {error && (
+        />
+        {error && errorMessages.message && (
           <p className="text-red-500 text-sm text-san pl-4 pt-1">
             {errorMessages.message}
           </p>
@@ -193,7 +272,7 @@ function ContactForm() {
         <input
           type="checkbox"
           name="terms"
-          className=" w-7 h-7 cursor-pointer accent-darkPink "
+          className="w-7 h-7 cursor-pointer accent-darkPink"
           id="term"
         />
         <label
@@ -204,10 +283,14 @@ function ContactForm() {
         </label>
       </div>
 
-      <button className="w-[168px] p-3 rounded-full border-2 font-semibold  border-sanJuanBlue text-sanJuanBlue bg-linkWaterWhite hover:text-linkWaterWhite hover:bg-sanJuanBlue transition-colors duration-300">
+      <button
+        type="submit"
+        className="w-[168px] p-3 rounded-full border-2 font-semibold border-sanJuanBlue text-sanJuanBlue bg-linkWaterWhite hover:text-linkWaterWhite hover:bg-sanJuanBlue transition-colors duration-300"
+      >
         Submit
       </button>
     </form>
   );
 }
+
 export default Contact;
