@@ -97,15 +97,15 @@ function ContactForm() {
     e.preventDefault();
     const [name, email, company, title, message] = e.target.elements;
 
-    setError(true);
-
-    setErrorMessages({
-      name: !validateText(name.value) ? "Name is required" : "",
-      email: !validateEmail(email.value) ? "" : "",
-      company: !validateText(company.value) ? "Company is required" : "",
-      title: !validateText(title.value) ? "Title is required" : "",
-      message: !validateText(message.value) ? "Message is required" : "",
-    });
+    if (
+      validateText(name.value) &&
+      validateEmail(email.value) &&
+      validateText(company.value) &&
+      validateText(title.value) &&
+      validateText(message.value)
+    ) {
+      setError(true);
+    }
   }
 
   return (
