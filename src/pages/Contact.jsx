@@ -105,6 +105,7 @@ function ContactForm() {
       validateText(message.value)
     ) {
       setError(true);
+      setErrorMessages({});
     }
   }
 
