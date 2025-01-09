@@ -59,7 +59,7 @@ function ContactHeader() {
   return (
     <section className="container mx-auto py-8 px-2 md:px-0 ">
       <h2 className="font-serif text-sanJuanBlue font-bold tracking-tight text-center text-4xl md:text-5xl lg:text-6xl lg:text-start lg:p-0 lg:w-[800px]  ">
-        Submit a help request and we’ll get in touch shortly.{" "}
+        Submit a help request and we’ll get in touch shortly.
       </h2>
     </section>
   );
