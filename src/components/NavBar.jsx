@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router";
 
 function NavBar() {
@@ -10,6 +10,25 @@ function NavBar() {
   function hadleNavClick() {
     setNavOpen(false);
   }
+
+  useEffect(() => {
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 768) {
+        setNavOpen(false);
+      }
+
+      window.addEventListener("scroll", function () {
+        setNavOpen(false);
+      });
+    });
+  }, []);
+  useEffect(() => {
+    if (navOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [navOpen]);
 
   return (
     <header className="z-50 overflow-hidden">
